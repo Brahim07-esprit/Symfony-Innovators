@@ -1,0 +1,21 @@
+{# templates/vehicule_controller/_form.html.twig #}
+
+{{ form_start(form) }}
+<div class="form-group">
+    {{ form_label(form.typeDuVehicule, 'Type du Vehicule') }}
+    {{ form_widget(form.typeDuVehicule, {'attr': {'class': 'form-control'}}) }}
+    {{ form_errors(form.typeDuVehicule) }}
+</div>
+
+<div class="form-group">
+    {{ form_label(form.marque, 'Marque') }}
+    {{ form_widget(form.marque, {'attr': {'class': 'form-control'}}) }}
+    {{ form_errors(form.marque) }}
+</div>
+
+{# Add any other form fields in the same manner here. #}
+
+<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{% dump(form.marque.vars.choices) %}
+
+{{ form_end(form) }}
